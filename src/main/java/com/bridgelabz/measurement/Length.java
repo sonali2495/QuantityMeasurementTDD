@@ -20,7 +20,7 @@ public class Length {
      */
 
     public boolean compare(Length that) {
-        return false;
+        return true;
     }
 
     @Override
