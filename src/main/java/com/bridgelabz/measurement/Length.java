@@ -14,10 +14,15 @@ public class Length {
     }
 
     /**
-     * Purpose : Compare the Lengths in feet
+     * Purpose : Compare the Lengths
      * * @param that : Taking Lengths
      * @return : if Matches then returning Values
      */
+
+    public boolean compare(Length that) {
+        return false;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

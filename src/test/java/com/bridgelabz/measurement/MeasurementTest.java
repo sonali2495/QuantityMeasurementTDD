@@ -2,8 +2,7 @@ package com.bridgelabz.measurement;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.*;
 
 public class MeasurementTest {
     @Test
@@ -53,5 +52,13 @@ public class MeasurementTest {
         Length feet1 = new Length(Length.Unit.FEET,0.0);
         Length inch1 = new Length(Length.Unit.INCH, 0.0);
         assertNotEquals(feet1, inch1);
+    }
+
+    @Test
+    void given0Feetand0Inch_ShouldReturnEqualLength() {
+        Length feet1 = new Length(Length.Unit.FEET,0.0);
+        Length inch1 = new Length(Length.Unit.INCH, 0.0);
+        boolean compareCheck = feet1.compare(inch1);
+        assertTrue(compareCheck);
     }
 }
