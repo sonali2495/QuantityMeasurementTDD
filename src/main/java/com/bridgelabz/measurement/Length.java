@@ -3,7 +3,7 @@ package com.bridgelabz.measurement;
 import java.util.Objects;
 
 public class Length {
-    private static final double FEET_TOINCH = 12.0;
+    private static final double FEET_TO_INCH = 12.0;
 
     enum Unit {FEET, INCH, YARD};
 
@@ -25,12 +25,11 @@ public class Length {
         if(this.unit.equals(Unit.FEET) && that.unit.equals(Unit.FEET))
             return Double.compare(this.value, that.value) == 0;
         if(this.unit.equals(Unit.FEET) && that.unit.equals(Unit.INCH))
-            return Double.compare(this.value*FEET_TOINCH, that.value) == 0;
+            return Double.compare(this.value * FEET_TO_INCH, that.value) == 0;
         if(this.unit.equals(Unit.INCH) && that.unit.equals(Unit.INCH))
             return Double.compare(this.value, that.value) == 0;
         if(this.unit.equals(Unit.INCH) && that.unit.equals(Unit.FEET))
-            return Double.compare(this.value, that.value) == 0;
-
+            return Double.compare(this.value, that.value * FEET_TO_INCH) == 0;
         return false;
     }
 
