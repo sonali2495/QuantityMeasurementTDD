@@ -286,4 +286,12 @@ public class MeasurementTest {
         boolean compareCheck = liter.compare(ml);
         assertTrue(compareCheck);
     }
+
+    @Test
+    public void given1000MilliLiterAnd1Liter_WhenCompared_ShouldReturnEqualVolume() {
+        Volume ml = new Volume(Volume.Unit.MILLI_LITER, 1000.0);
+        Volume liter = new Volume(Volume.Unit.LITER, 1.0);
+        boolean compareCheck = ml.compare(liter);
+        assertTrue(compareCheck);
+    }
 }
