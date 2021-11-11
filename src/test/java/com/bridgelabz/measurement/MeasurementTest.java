@@ -247,4 +247,11 @@ public class MeasurementTest {
         Volume liter2 = new Volume(Volume.Unit.LITER, 2.0);
         assertNotEquals(liter1, liter2);
     }
+
+    @Test
+    public void given1LitreAndNull_ShouldReturnNotEqualVolume() {
+        Volume litre1 = new Volume(Volume.Unit.LITER, 1.0);
+        Volume litre2 = null;
+        assertNotEquals(litre1, litre2);
+    }
 }
