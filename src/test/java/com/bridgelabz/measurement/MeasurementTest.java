@@ -93,4 +93,12 @@ public class MeasurementTest {
         boolean compareCheck = inch1.compare(feet1);
         assertTrue(compareCheck);
     }
+
+    @Test
+    public void given12Inchand1Feet_ShouldReturnEqualLength() {
+        Length inch1 = new Length(Length.Unit.INCH,12.0);
+        Length feet1 = new Length(Length.Unit.FEET, 1.0);
+        boolean compareCheck = inch1.compare(feet1);
+        assertTrue(compareCheck);
+    }
 }
