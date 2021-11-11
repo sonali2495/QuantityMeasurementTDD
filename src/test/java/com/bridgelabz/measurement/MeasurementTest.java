@@ -270,4 +270,12 @@ public class MeasurementTest {
         boolean compareCheck = gallon.compare(liter);
         assertFalse(compareCheck);
     }
+
+    @Test
+    public void given1GallonAnd3$78Liter_WhenCompared_ShouldReturnEqualVolume() {
+        Volume gallon = new Volume(Volume.Unit.GALLON, 1.0);
+        Volume liter = new Volume(Volume.Unit.LITER, 3.78);
+        boolean compareCheck = gallon.compare(liter);
+        assertTrue(compareCheck);
+    }
 }
