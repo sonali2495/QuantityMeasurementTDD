@@ -178,4 +178,14 @@ public class MeasurementTest {
         Length actualSum = inch1.sumOfLength(inch2);
         assertEquals(expectedSum, actualSum);
     }
+
+    @Test
+    public void given1FeetAnd2Inch_WhenAdded_ShouldReturn14Inch() {
+        Length feet = new Length(Length.Unit.FEET, 1.0);
+        Length inch = new Length(Length.Unit.INCH, 2.0);
+        Length expectedSum = new Length(Length.Unit.INCH, 14.0);
+        Length actualSum = feet.sumOfLength(inch);
+        assertEquals(expectedSum, actualSum);
+    }
+
 }
