@@ -87,14 +87,6 @@ public class MeasurementTest {
     }
 
     @Test
-    public void given1Inchand1Feet_ShouldReturnNotEqualLength() {
-        Length inch1 = new Length(Length.Unit.INCH,1.0);
-        Length feet1 = new Length(Length.Unit.FEET, 1.0);
-        boolean compareCheck = inch1.compare(feet1);
-        assertTrue(compareCheck);
-    }
-
-    @Test
     public void given12Inchand1Feet_ShouldReturnEqualLength() {
         Feet feetToInch = new Feet();
         boolean result = feetToInch.lengthComparison(1.0, 12.0);
@@ -120,5 +112,13 @@ public class MeasurementTest {
         Inch inch1 = new Inch(0.0);
         Inch inch2 = new Inch(0);
         assertNotSame(inch1, inch2);
+    }
+
+    @Test
+    public void given3FeetAnd1Yard_WhenCompared_ShouldReturnTrue() {
+        Length feet = new Length(Length.Unit.FEET, 3.0);
+        Length yard = new Length(Length.Unit.YARD, 1.0);
+        boolean compareCheck = feet.compare(yard);
+        assertTrue(compareCheck);
     }
 }
