@@ -101,5 +101,11 @@ public class MeasurementTest {
         assertTrue(result);
     }
 
+    @Test
+    public void given0InchandNullInch_ShouldReturnNotEqual() {
+        Inch inch1 = new Inch(0.0);
+        Inch inch2 = null;
+        assertNotSame(inch1, inch2);
+    }
 
 }
