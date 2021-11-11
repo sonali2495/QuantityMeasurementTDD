@@ -108,4 +108,10 @@ public class MeasurementTest {
         assertNotSame(inch1, inch2);
     }
 
+    @Test
+    public void givenInchandInchFromSameRef_WhenEqual_ShouldReturnTrue() {
+        Inch inch1 = new Inch(0);
+        boolean result = inch1 == inch1;
+        assertTrue(result);
+    }
 }
