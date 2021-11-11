@@ -169,4 +169,13 @@ public class MeasurementTest {
         boolean compareCheck = inch.compare(cm);
         assertTrue(compareCheck);
     }
+
+    @Test
+    public void given2InchAnd2Inch_WhenAdded_ShouldReturn4Inch() {
+        Length inch1 = new Length(Length.Unit.INCH, 2.0);
+        Length inch2 = new Length(Length.Unit.INCH, 2.0);
+        Length expectedSum = new Length(Length.Unit.INCH, 4.0);
+        Length actualSum = inch1.sumOfLength(inch2);
+        assertEquals(expectedSum, actualSum);
+    }
 }
