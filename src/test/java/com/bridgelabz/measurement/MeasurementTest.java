@@ -79,10 +79,18 @@ public class MeasurementTest {
     }
 
     @Test
-    public void given1Inchand1Inch_ShouldReturnEqualLength() {
+    public void given1Inchand1Feet_ShouldReturnEqualLength() {
         Length inch1 = new Length(Length.Unit.INCH, 1.0);
         Length inch2 = new Length(Length.Unit.INCH, 1.0);
         boolean compareCheck = inch1.compare(inch2);
-        assertTrue(compareCheck);
+        assertFalse(compareCheck);
+    }
+
+    @Test
+    public void given1Inchand1Feet_ShouldReturnNotEqualLength() {
+        Length inch1 = new Length(Length.Unit.INCH,1.0);
+        Length feet1 = new Length(Length.Unit.FEET, 1.0);
+        boolean compareCheck = inch1.compare(feet1);
+        assertFalse(compareCheck);
     }
 }
