@@ -233,4 +233,11 @@ public class MeasurementTest {
         Volume gallon2 = new Volume(Volume.Unit.GALLON, 1.0);
         assertNotSame(gallon1, gallon2);
     }
+
+    @Test
+    public void give0LiterAnd0Liter_ShouldReturnEqualVolume() {
+        Volume liter1 = new Volume(Volume.Unit.LITER, 0.0);
+        Volume liter2 = new Volume(Volume.Unit.LITER, 0.0);
+        assertEquals(liter1, liter2);
+    }
 }
