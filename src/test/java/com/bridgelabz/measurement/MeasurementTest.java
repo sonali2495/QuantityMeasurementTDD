@@ -394,29 +394,36 @@ public class MeasurementTest {
 
     @Test
     public void givenFahrenheitAndFahrenheit_ShouldReturnEqual() {
-        Temperature Fahrenheit1 = new Temperature(Temperature.Unit.FAHRENHEIT, 212.0);
-        Temperature Fahrenheit2 = new Temperature(Temperature.Unit.FAHRENHEIT, 212.0);
-        assertEquals(Fahrenheit1, Fahrenheit2);
+        Temperature fahrenheit1 = new Temperature(Temperature.Unit.FAHRENHEIT, 212.0);
+        Temperature fahrenheit2 = new Temperature(Temperature.Unit.FAHRENHEIT, 212.0);
+        assertEquals(fahrenheit1, fahrenheit2);
     }
 
     @Test
     public void givenFahrenheitAndFahrenheit_ShouldReturnNotEqual() {
-        Temperature Fahrenheit1 = new Temperature(Temperature.Unit.FAHRENHEIT, 212.0);
-        Temperature Fahrenheit2 = new Temperature(Temperature.Unit.FAHRENHEIT, 200.0);
-        assertNotEquals(Fahrenheit1, Fahrenheit2);
+        Temperature fahrenheit1 = new Temperature(Temperature.Unit.FAHRENHEIT, 212.0);
+        Temperature fahrenheit2 = new Temperature(Temperature.Unit.FAHRENHEIT, 200.0);
+        assertNotEquals(fahrenheit1, fahrenheit2);
     }
 
     @Test
     public void givenFahrenheit_WhenNull_ShouldReturnFalse() {
-        Temperature Fahrenheit = new Temperature(Temperature.Unit.FAHRENHEIT, 212.0);
-        boolean nullCheck = Fahrenheit.equals(null);
+        Temperature fahrenheit = new Temperature(Temperature.Unit.FAHRENHEIT, 212.0);
+        boolean nullCheck = fahrenheit.equals(null);
         assertFalse(nullCheck);
     }
 
     @Test
     public void givenFahrenheit1AndFahrenheit2_WhenEqualType_ShouldReturnEqual() {
-        Temperature Fahrenheit1 = new Temperature(Temperature.Unit.FAHRENHEIT, 212.0);
-        Temperature Fahrenheit2 = new Temperature(Temperature.Unit.FAHRENHEIT, 212.0);
-        assertEquals(Fahrenheit1.getClass(), Fahrenheit2.getClass());
+        Temperature fahrenheit1 = new Temperature(Temperature.Unit.FAHRENHEIT, 212.0);
+        Temperature fahrenheit2 = new Temperature(Temperature.Unit.FAHRENHEIT, 212.0);
+        assertEquals(fahrenheit1.getClass(), fahrenheit2.getClass());
+    }
+
+    @Test
+    public void given212FahrenheitAnd100C_WhenCompared_ShouldReturnEqual() {
+        Temperature fahrenheit = new Temperature(Temperature.Unit.FAHRENHEIT, 212.0);
+        double celsius = fahrenheit.compare();
+        assertEquals(100.0,celsius);
     }
 }

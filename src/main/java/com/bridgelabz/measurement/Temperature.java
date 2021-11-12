@@ -10,6 +10,15 @@ public class Temperature {
         this.value = value;
     }
 
+    /**
+     * Purpose : To Convert Value Fahrenheit to Celsius
+     *
+     * @return Celsius
+     */
+    public double compare() {
+        return (this.value - 32) * 5 / 9;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
