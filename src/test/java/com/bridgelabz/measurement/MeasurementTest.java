@@ -412,4 +412,11 @@ public class MeasurementTest {
         boolean nullCheck = Fahrenheit.equals(null);
         assertFalse(nullCheck);
     }
+
+    @Test
+    public void givenFahrenheit1AndFahrenheit2_WhenEqualType_ShouldReturnEqual() {
+        Temperature Fahrenheit1 = new Temperature(Temperature.Unit.FAHRENHEIT, 212.0);
+        Temperature Fahrenheit2 = new Temperature(Temperature.Unit.FAHRENHEIT, 212.0);
+        assertEquals(Fahrenheit1.getClass(), Fahrenheit2.getClass());
+    }
 }
