@@ -405,4 +405,11 @@ public class MeasurementTest {
         Temperature Fahrenheit2 = new Temperature(Temperature.Unit.FAHRENHEIT, 200.0);
         assertNotEquals(Fahrenheit1, Fahrenheit2);
     }
+
+    @Test
+    public void givenFahrenheit_WhenNull_ShouldReturnFalse() {
+        Temperature Fahrenheit = new Temperature(Temperature.Unit.FAHRENHEIT, 212.0);
+        boolean nullCheck = Fahrenheit.equals(null);
+        assertFalse(nullCheck);
+    }
 }
