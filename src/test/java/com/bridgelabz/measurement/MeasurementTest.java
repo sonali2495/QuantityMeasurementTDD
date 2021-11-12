@@ -312,4 +312,25 @@ public class MeasurementTest {
         Volume actualSum = liter.sumOfVolume(ml);
         assertEquals(expectedSum, actualSum);
     }
+
+    @Test
+    public void givenKg_WhenNull_ShouldReturnFalse() {
+        Weight kg = new Weight(Weight.Unit.KILOGRAM, null);
+        boolean result = kg.equals(null);
+        assertFalse(result);
+    }
+
+    @Test
+    public void givenGrams_WhenNull_ShouldReturnFalse() {
+        Weight grams = new Weight(Weight.Unit.GRAMS, null);
+        boolean result = grams.equals(null);
+        assertFalse(result);
+    }
+
+    @Test
+    public void givenTonne_WhenNull_ShouldReturnFalse() {
+        Weight tonne = new Weight(Weight.Unit.TONNE, null);
+        boolean result = tonne.equals(null);
+        assertFalse(result);
+    }
 }
