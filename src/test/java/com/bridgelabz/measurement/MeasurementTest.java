@@ -375,4 +375,12 @@ public class MeasurementTest {
         Weight tonne2 = new Weight(Weight.Unit.TONNE, 1.0);
         assertEquals(tonne1, tonne2);
     }
+
+    @Test
+    public void given1kgAnd1000Grams_WhenCompare_ShouldReturnTrue() {
+        Weight kg = new Weight(Weight.Unit.KILOGRAM, 1.0);
+        Weight gram = new Weight(Weight.Unit.GRAMS, 1000.0);
+        boolean compareCheck = kg.compare(gram);
+        assertTrue(compareCheck);
+    }
 }
