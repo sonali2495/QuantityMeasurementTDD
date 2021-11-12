@@ -6,6 +6,7 @@ public class Weight {
     public final Double value;
     public final Unit unit;
     private static final Double KG_INTO_GRAMS = 1000.0;
+    private static final Double TONNE_TO_KG = 1000.0;
     enum Unit {KILOGRAM, GRAMS, TONNE}
 
     public Weight(Unit unit, Double value) {
@@ -31,5 +32,11 @@ public class Weight {
         if (o == null || getClass() != o.getClass()) return false;
         Weight weight = (Weight) o;
         return Objects.equals(value, weight.value) && unit == weight.unit;
+    }
+
+    public double addTwoWeights(Weight that) {
+        if (this.unit.equals(Unit.TONNE) && that.unit.equals(Unit.GRAMS))
+            return this.value * TONNE_TO_KG + that.value / KG_INTO_GRAMS;
+        return 0;
     }
 }
