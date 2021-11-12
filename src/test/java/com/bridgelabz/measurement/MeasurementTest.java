@@ -345,11 +345,32 @@ public class MeasurementTest {
     public void givenGram_WhenSameType_ShouldReturnEqual() {
         Weight gram1 = new Weight(Weight.Unit.GRAMS, 1000.0);
         Weight gram2 = new Weight(Weight.Unit.GRAMS, 1000.0);
-        assertEquals(gram1, gram2);
+        assertEquals(gram1.getClass(), gram2.getClass());
     }
 
     @Test
     public void givenTonne_WhenSameType_ShouldReturnEqual() {
+        Weight tonne1 = new Weight(Weight.Unit.TONNE, 1.0);
+        Weight tonne2 = new Weight(Weight.Unit.TONNE, 1.0);
+        assertEquals(tonne1.getClass(), tonne2.getClass());
+    }
+
+    @Test
+    public void given1KgAnd1Kg_WhenCompare_ShouldReturnEqual() {
+        Weight kg1 = new Weight(Weight.Unit.KILOGRAM, 1.0);
+        Weight kg2 = new Weight(Weight.Unit.KILOGRAM, 1.0);
+        assertEquals(kg1, kg2);
+    }
+
+    @Test
+    public void given1000gramAnd1000gram_WhenCompare_ShouldReturnEqual() {
+        Weight gram1 = new Weight(Weight.Unit.GRAMS, 1000.0);
+        Weight gram2 = new Weight(Weight.Unit.GRAMS, 1000.0);
+        assertEquals(gram1, gram2);
+    }
+
+    @Test
+    public void given1TonneAnd1Tonne_WhenCompare_ShouldReturnEqual() {
         Weight tonne1 = new Weight(Weight.Unit.TONNE, 1.0);
         Weight tonne2 = new Weight(Weight.Unit.TONNE, 1.0);
         assertEquals(tonne1, tonne2);
