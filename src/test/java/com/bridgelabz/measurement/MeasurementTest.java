@@ -391,4 +391,18 @@ public class MeasurementTest {
         double add = tonne.addTwoWeights(gram);
         assertEquals(1001.0, add);
     }
+
+    @Test
+    public void givenFahrenheitAndFahrenheit_ShouldReturnEqual() {
+        Temperature Fahrenheit1 = new Temperature(Temperature.Unit.FAHRENHEIT, 212.0);
+        Temperature Fahrenheit2 = new Temperature(Temperature.Unit.FAHRENHEIT, 212.0);
+        assertEquals(Fahrenheit1, Fahrenheit2);
+    }
+
+    @Test
+    public void givenFahrenheitAndFahrenheit_ShouldReturnNotEqual() {
+        Temperature Fahrenheit1 = new Temperature(Temperature.Unit.FAHRENHEIT, 212.0);
+        Temperature Fahrenheit2 = new Temperature(Temperature.Unit.FAHRENHEIT, 200.0);
+        assertNotEquals(Fahrenheit1, Fahrenheit2);
+    }
 }
