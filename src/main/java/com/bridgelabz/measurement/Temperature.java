@@ -1,7 +1,7 @@
 package com.bridgelabz.measurement;
 
 public class Temperature {
-    enum Unit {FAHRENHEIT}
+    enum Unit {FAHRENHEIT, CELSIUS}
     public final double value;
     public final Unit unit;
 
@@ -15,10 +15,13 @@ public class Temperature {
      *
      * @return Celsius
      */
-    public double compare() {
+    public double convertFahrenheitToCelsius() {
         return (this.value - 32) * 5 / 9;
     }
 
+    public double convertCelsiusToFahrenheit() {
+        return (this.value * 9 / 5) + 32;
+    }
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
